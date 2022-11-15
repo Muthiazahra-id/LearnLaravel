@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 //URL index/ Home
 Route::get('/', function () {
-    $user =  ['name' => 'MUTHIA', 'role' => 'admin'];
+    $user =  ['name' => '', 'role' => 'admin'];
     return view('pages.home',$user);
 });
 
