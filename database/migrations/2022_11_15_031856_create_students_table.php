@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('namalengkap');
             $table->string('nis', 10)->unique();
-            $table->string('namalengkap');
-            $table->unsignedBigInterger('class_id');
+            $table->string('jk', 1);
+            //$table->unsignedBigInterger('class_id');
             //$table->foreign('class_id')->reference('id')
             $table->timestamps();
         });

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeC;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,23 +15,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 //URL index/ Home
+Route::redirect('/','/home');
+Route::get('/home', [HomeC::class, 'index']);
+Route::get('/about', [HomeC::class, 'about']);
+Route::get('/contact', [HomeC::class, 'contact']);
+
 Route::get('/', function () {
     $user =  ['name' => '', 'role' => 'admin'];
     return view('pages.home',$user);
 });
 
-Route::redirect('/home', '/');
+
 
 Route::get('/about', function () {
-    $user =  ['name' => 'ZAHRA', 'role' => 'admin'];
-    return view('pages.about',$user);
+    ;
 });
 
 Route::get('/contact', function () {
-    $data =[
-        "person"=> ["Rizky", "Gavin", "Dzaky","Iqbal"]
-    ];
-    return view('pages.contact', $data);
+   
 });
 
 
